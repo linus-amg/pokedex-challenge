@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pokedex-ui-frankfurt
+    env: node
+    region: frankfurt
+    plan: starter plus
+    buildCommand: cd ui && npm install --production=false && npm run build
+    startCommand: cd ui && npm run serve
+  - type: web
+    name: pokedex-api-frankfurt
+    env: node
+    region: frankfurt
+    plan: starter plus
+    buildCommand: cd api && npm install --production=false
+    startCommand: cd api && npm run start
