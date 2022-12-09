@@ -1,44 +1,25 @@
-import { Card, CardBody, CardHeader, Divider, Flex, GridItem, Image, Table, Tbody, Td, Text, Tr } from "@chakra-ui/react";
+import { Card, CardBody, CardHeader, Flex, GridItem, Image, Text } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 function PokemonCard({ pokemon }) {
+
+  const bgGradient = pokemon.legendary ? 'linear(to-br, yellow.50, yellow.200)' : 'linear(to-br, gray.50, white)';
+
   return <GridItem>
-    <Card bg="white">
+  <Link to={`/detail/${pokemon.id}`}>
+    <Card bgGradient={bgGradient}>
       <CardHeader><Text maxWidth='100%' noOfLines={1}>{pokemon.name}</Text></CardHeader>
       <CardBody>
         <Flex justify="center" height={140}>
           <Image height={24} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.original_id}.png`} />
         </Flex>
-        <Flex justify="space-between" p={4}>
+        <Flex justify="space-between" p={0}>
           <Text>#{pokemon.original_id}</Text>
-          <Text fontSize={16}>{pokemon.type1} {pokemon.type2}</Text>
+          <Text fontSize={16}>{pokemon.type1} {pokemon.type2 && '&'} {pokemon.type2}</Text>
         </Flex>
-        <Table size="sm">
-          <Tbody>
-            <Tr>
-              <Td>HP</Td><Td>{pokemon.healthpoints}</Td>
-            </Tr>
-            <Tr>
-              <Td>Attack</Td><Td>{pokemon.attack}</Td>
-            </Tr>
-            <Tr>
-              <Td>Special Attack</Td><Td>{pokemon.special_attack}</Td>
-            </Tr>
-            <Tr>
-              <Td>Defense</Td><Td>{pokemon.defense}</Td>
-            </Tr>
-            <Tr>
-              <Td>Special Defense</Td><Td>{pokemon.special_defense}</Td>
-            </Tr>
-            <Tr>
-              <Td>Speed</Td><Td>{pokemon.speed}</Td>
-            </Tr>
-            <Tr>
-              <Td>Total</Td><Td>{pokemon.total}</Td>
-            </Tr>
-          </Tbody>
-        </Table>
       </CardBody>
     </Card>
+    </Link>
   </GridItem>
 }
 

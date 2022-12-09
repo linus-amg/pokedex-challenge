@@ -32,7 +32,7 @@ app.use(basicAuth({
 }));
 
 // use routers with a base path
-app.use('/pokemon', pokemonRouter);
+app.use('/api/pokemons', pokemonRouter);
 
 // start server
 const server = app.listen(PORT, () => {
