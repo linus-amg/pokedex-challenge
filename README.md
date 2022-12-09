@@ -2,6 +2,10 @@
 
 ## How to run this locally
 
+### Prerequisites
+- Docker, I used version 20.10.21
+- NodeJS, I used version 16.15.0 with npm version 9.1.2
+
 ### Clone the repository and enter the directory, then checkout the feature branch
 ```sh
 $ git clone https://github.com/linus-amg/pokedex-challenge.git
