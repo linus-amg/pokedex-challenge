@@ -22,6 +22,6 @@ services:
     dockerfilePath: ./database/docker/mysql/Dockerfile
     dockerContext: ./database/docker/mysql/
     disk:
-      name: data
-      mountPath: /var/lib/mysql-files
-      sizeGB: 5
+      name: mysql
+      mountPath: /var/lib/mysql
+      sizeGB: 10
