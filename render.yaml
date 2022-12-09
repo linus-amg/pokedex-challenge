@@ -4,25 +4,20 @@ services:
     env: node
     region: frankfurt
     plan: starter plus
-    buildCommand: cd ui && npm install --production=false && npm run build
-    startCommand: cd ui && npm run serve
+    rootDir: ui
+    buildCommand: npm install --production=false && npm run build
+    startCommand: npm run serve
   - type: web
     name: pokedex-api-frankfurt
     env: node
     region: frankfurt
     plan: starter plus
-    buildCommand: cd api && npm install --production=false
-    startCommand: cd api && npm run start
+    rootDir: api
+    buildCommand: npm install --production=false
+    startCommand: npm run start
   - type: pserv
     name: pokedex-database-frankfurt
     region: frankfurt
     env: docker
     dockerfilePath: ./database/docker/mysql/Dockerfile
     dockerContext: ./database/docker/mysql/
-    env:
-      MYSQL_USER: pokedexdb-user
-      MYSQL_PASSWORD: pokedexdb-password
-      MYSQL_ROOT_PASSWORD: pokedexdb-rootpassword
-      MYSQL_DATABASE: pokedex
-    ports:
-      - 3308:3306
