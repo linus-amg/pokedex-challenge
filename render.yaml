@@ -19,3 +19,10 @@ services:
     env: docker
     dockerfilePath: ./database/docker/mysql/Dockerfile
     dockerContext: ./database/docker/mysql/
+    env:
+      MYSQL_USER: pokedexdb-user
+      MYSQL_PASSWORD: pokedexdb-password
+      MYSQL_ROOT_PASSWORD: pokedexdb-rootpassword
+      MYSQL_DATABASE: pokedex
+    ports:
+      - 3308:3306
