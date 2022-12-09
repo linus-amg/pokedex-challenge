@@ -13,3 +13,9 @@ services:
     plan: starter plus
     buildCommand: cd api && npm install --production=false
     startCommand: cd api && npm run start
+  - type: pserv
+    name: pokedex-database-frankfurt
+    region: frankfurt
+    env: docker
+    dockerfilePath: ./database/docker/mysql/Dockerfile
+    dockerContext: ./database/docker/mysql/
