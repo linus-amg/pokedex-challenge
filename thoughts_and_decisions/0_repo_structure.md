@@ -1,0 +1,1 @@
+I decided to build a monorepo for this assignment because the different components of the solution tie together pretty closely.
