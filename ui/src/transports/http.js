@@ -55,7 +55,7 @@ class HTTP {
   }
 }
 
-const endpoint = process.env.REACT_APP_BACKEND_URL || '//localhost:7000';
+const endpoint = process.env.REACT_APP_BACKEND_URL || '//pokedex-api-frankfurt.onrender.com';
 const http = new HTTP(endpoint);
 
 export default http;
