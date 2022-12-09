@@ -1,0 +1,3 @@
+- I never used the LOAD DATA INFILE command before, so I was happy to learn about it and use it in this project. I think it is a very useful command to import existing .csv data into a MySQL database.
+- I was especially happy of converting the `legendary` True/False String values from the .csv into a boolean value when inserting them into the Table.
+- I liked that I managed to make it look good - thanks to chakra-ui - even though this was not a key part of the assignment.

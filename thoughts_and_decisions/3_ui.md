@@ -1,0 +1,1 @@
+- For building the user interface I decided to use a cra & chakra-ui starter, since those are the libraries I currently most work with.

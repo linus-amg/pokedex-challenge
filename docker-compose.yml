@@ -1,0 +1,13 @@
+version : '3'
+
+services:
+  mysql:
+    build: ./database/docker/mysql
+    container_name: pokedex-challenge-linus-mysql
+    environment:
+      MYSQL_USER: pokedexdb-user
+      MYSQL_PASSWORD: pokedexdb-password
+      MYSQL_ROOT_PASSWORD: pokedexdb-rootpassword
+      MYSQL_DATABASE: pokedex
+    ports:
+      - 3308:3306

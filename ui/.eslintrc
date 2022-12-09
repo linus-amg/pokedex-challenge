@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "plugins": [
+    "prettier",
+    "autofix"
+  ],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": 1, // warning
+    "prettier/prettier": 2, // error,
+    "default-param-last": 0, // disabled
+    "react/jsx-filename-extension": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/require-default-props": 0,
+    "jsx-a11y/label-has-associated-control": [
+      1,
+      {
+        "labelAttributes": [
+          "label"
+        ],
+        "assert": "htmlFor",
+        "depth": 1
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "autofix/no-unused-vars": 1,
+    "react/prop-types": 0,
+    "import/no-named-as-default": 0,
+    "class-methods-use-this": 0,
+    "prefer-destructuring": 1,
+    "lines-between-class-members": [
+      2,
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "no-underscore-dangle": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}
