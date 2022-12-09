@@ -2,9 +2,9 @@ import useSWR from 'swr';
 
 import http from '../transports/http';
 
-const fetcher = (url) => http.get(url);
+const fetcher = url => http.get(url);
 
-const useAPI = (path) => {
+const useAPI = path => {
   const { data, error, mutate } = useSWR(path, fetcher);
   const isEmpty = data && data.length === 0;
 
@@ -13,7 +13,7 @@ const useAPI = (path) => {
     isLoading: !error && !data,
     isEmpty,
     error,
-    mutate
+    mutate,
   };
 };
 

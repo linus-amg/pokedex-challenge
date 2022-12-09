@@ -1,11 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {
-  ChakraProvider,
-  Box,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
+import { ChakraProvider, Box, Grid, theme } from '@chakra-ui/react';
 import PokemonCardsGrid from './Components/PokemonCardsGrid';
 import PokemonDetail from './Components/PokemonDetail';
 
@@ -22,7 +17,6 @@ function App() {
           </BrowserRouter>
         </Grid>
       </Box>
-
     </ChakraProvider>
   );
 }

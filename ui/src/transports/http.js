@@ -1,14 +1,16 @@
 /* eslint-disable no-undef */
 
-const authorizationHeader = `Basic ${btoa("ceezer:hireme")}`;
+import { BACKEND_URL } from '../utils';
+
+const authorizationHeader = `Basic ${btoa('ceezer:hireme')}`;
 
 const defaultRequestOptions = {
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': authorizationHeader
+    Authorization: authorizationHeader,
   },
   mode: 'cors',
-  referrerPolicy: 'no-referrer-when-downgrade'
+  referrerPolicy: 'no-referrer-when-downgrade',
 };
 
 class HTTP {
@@ -19,14 +21,13 @@ class HTTP {
   post = (path, body) => this.request('POST', path, body);
   patch = (path, body) => this.request('PATCH', path, body);
   put = (path, body) => this.request('PUT', path, body);
-  get = (path) => this.request('GET', path);
-  delete = (path) => this.request('DELETE', path);
+  get = path => this.request('GET', path);
+  delete = path => this.request('DELETE', path);
 
   request = async (method = 'GET', path, body) => {
-    
     const options = {
       method: method.toUpperCase(),
-      ...defaultRequestOptions
+      ...defaultRequestOptions,
     };
 
     if (body) {
@@ -53,7 +54,7 @@ class HTTP {
   }
 }
 
-const endpoint = process.env.REACT_APP_BACKEND_URL || '//pokedex-api-frankfurt.onrender.com';
+const endpoint = BACKEND_URL;
 const http = new HTTP(endpoint);
 
 export default http;
