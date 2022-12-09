@@ -1,0 +1,4 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+CREATE DATABASE IF NOT EXISTS pokedex DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+SET GLOBAL local_infile=true;
+USE pokedex;
