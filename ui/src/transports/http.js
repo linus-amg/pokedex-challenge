@@ -19,8 +19,8 @@ class HTTP {
   post = (path, body) => this.request('POST', path, body);
   patch = (path, body) => this.request('PATCH', path, body);
   put = (path, body) => this.request('PUT', path, body);
-  get = async (path) => this.request('GET', path);
-  delete = async (path) => this.request('DELETE', path);
+  get = (path) => this.request('GET', path);
+  delete = (path) => this.request('DELETE', path);
 
   request = async (method = 'GET', path, body) => {
     
@@ -28,8 +28,6 @@ class HTTP {
       method: method.toUpperCase(),
       ...defaultRequestOptions
     };
-
-    console.log(options)
 
     if (body) {
       options.body = JSON.stringify(body);
