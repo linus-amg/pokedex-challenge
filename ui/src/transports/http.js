@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
 
+const authorizationHeader = `Basic ${btoa("ceezer:hireme")}`;
+
 const defaultRequestOptions = {
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Basic ${btoa("ceezer:hireme")}`,
+    'Authorization': authorizationHeader
   },
   mode: 'cors',
   referrerPolicy: 'no-referrer-when-downgrade'
@@ -34,9 +36,6 @@ class HTTP {
     }
 
     const response = await fetch(`${this.endpoint}${path}`, options);
-    // if (response.status === 401) {
-    //   return window.stores.sessionStore.setAuthenticated(false);
-    // }
 
     return HTTP.handleResponse(response);
   };
