@@ -1,0 +1,1 @@
+- While developing the API I had the idea that it would be nice to check the environment configuration while starting up, so we can make sure required things which are needed to make the API run (like database access) are actually defined when booting up this node service. NPM packages like "env-schema" could be used for that purpose.
