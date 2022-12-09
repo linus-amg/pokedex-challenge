@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "plugins": [
+    "prettier",
+    "autofix"
+  ],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": 1, // warning
+    "prettier/prettier": 2, // error,
+    "default-param-last": 0, // disabled
+    "autofix/no-unused-vars": 1,
+    "import/no-named-as-default": 0,
+    "class-methods-use-this": 0,
+    "prefer-destructuring": 1,
+    "lines-between-class-members": [
+      2,
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "no-underscore-dangle": 0
+  },
+  "env": {
+    "node": true,
+    "jest": true
+  }
+}
