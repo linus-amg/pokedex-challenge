@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: pokedex-ui-frankfurt
+    env: node
+    region: frankfurt
+    plan: starter plus
+    rootDir: ui
+    buildCommand: npm install --production=false && npm run build
+    startCommand: npm run serve
+  - type: web
+    name: pokedex-api-frankfurt
+    env: node
+    region: frankfurt
+    plan: starter plus
+    rootDir: api
+    buildCommand: npm install --production=false
+    startCommand: npm run start
+  - type: pserv
+    name: pokedex-database-frankfurt
+    region: frankfurt
+    env: docker
+    dockerfilePath: ./database/docker/mysql/Dockerfile
+    dockerContext: ./database/docker/mysql/
+    disk:
+      name: mysql
+      mountPath: /var/lib/mysql
+      sizeGB: 10
