@@ -15,6 +15,7 @@ const HTTP_BASIC_PASSWORD = process.env.HTTP_BASIC_PASSWORD || "hireme";
 const HTTP_BASIC_AUTH_USERS = {
   [HTTP_BASIC_USER]: HTTP_BASIC_PASSWORD,
 };
+
 const DEFAULT_ORIGIN = `${process.env.UI_PROTOCOL}://${process.env.UI_HOST}${
   process.env.UI_PORT ? ":" : ""
 }${process.env.UI_PORT}`;

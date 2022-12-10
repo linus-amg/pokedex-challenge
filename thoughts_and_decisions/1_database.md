@@ -4,4 +4,6 @@
 
 - The csv file is also copied over to the image when building it, so it's embedded into the image.
 
-- I had to use the `arm64v8/mysql:oracle` base image because the `mysql:latest` image is not available for arm64 and I'm working on a MacBook Pro with an Apple Silicon Chip (M1).
+- ~~I had to use the `arm64v8/mysql:oracle` base image because the `mysql:latest` image is not available for arm64 and I'm working on a MacBook Pro with an Apple Silicon Chip (M1).~~
+
+- Forget the above line, I just realized that I *can* use the common `mysql` image and don't need to rely anymore on the `arm64v8` arch for my CPU.
